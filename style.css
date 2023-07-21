@@ -160,7 +160,7 @@ li{
 background: linear-gradient(17deg, rgba(0, 183, 171, 0.9) 0%, rgba(178, 0, 178, 1) 100%);
 }
 #aboutSec > *{
-    margin: 10vh;
+    margin: 8vh;
 }
 #closebtn{
     position: absolute;
