@@ -1,7 +1,8 @@
 let audioElement = new Audio('resources/songs/mehram.mp3');
 let Playing = document.getElementById('playing');
 let mySeekBar= document.getElementById('seekBar');
-let gif= document.getElementById('gif');
+let gif1= document.getElementById('gif1');
+let gif2= document.getElementById('gif2');
 let songItems= Array.from(document.getElementsByClassName('songItem'));
 let songIndex =0;
 let currentSongName=document.getElementById('currentSong');
@@ -34,9 +35,14 @@ let songs=[
     {songName:'Mera Mann Kehne Laga',filePath:'resources/songs/Mera Mann Kehne Laga.mp3',Tpath:"resources/thumbnails/meramann.jpeg"},
 ]
 songItems.forEach((element,i)=>{
-    console.log(element,i);
+    element.setAttribute("class","flex bg-black text-white items-center justify-between  w-full rounded-full")
     element.getElementsByTagName("img")[0].src=songs[i].Tpath;
+    element.getElementsByTagName("img")[0].setAttribute("class","lg:h-20 h-16 rounded-l-full");
     element.getElementsByClassName("songName")[0].innerText= songs[i].songName;
+    element.getElementsByClassName("songName")[0].setAttribute("class","lg:text-2xl");
+    element.getElementsByClassName("timestamp")[0].setAttribute("class","timestamp flex items-center gap-1");
+    element.getElementsByClassName("timestamp")[0].getElementsByClassName("songItemPlay")[0].setAttribute("class","songItemPlay fa-solid fa-3x fa-play-circle");
+    
 })
 // alert(songs[0].songName);
 // event listerners
@@ -47,13 +53,15 @@ Playing.addEventListener('click',()=>{
         audioElement.play();
         Playing.classList.remove('fa-play-circle');
         Playing.classList.add('fa-pause-circle');
-        gif.style.opacity=1;
+        gif1.style.opacity=1;
+        gif2.style.opacity=1;
     }
     else{
         audioElement.pause();
         Playing.classList.remove('fa-pause-circle');
         Playing.classList.add('fa-play-circle');
-        gif.style.opacity=0;
+        gif1.style.opacity=0;
+        gif2.style.opacity=0;
         makeAllplays();
     }
 
@@ -83,7 +91,8 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         audioElement.pause();
         e.target.classList.remove('fa-pause-circle');
         e.target.classList.add('fa-play-circle');
-        gif.style.opacity = 0;
+        gif1.style.opacity = 0;
+        gif2.style.opacity = 0;
         makeAllplays(); // Remove the 'fa-pause-circle' class from all other buttons
         // Update the main play/pause button
         Playing.classList.remove('fa-pause-circle');
@@ -98,7 +107,8 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         currentSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
-        gif.style.opacity = 1;
+        gif1.style.opacity = 1;
+        gif2.style.opacity = 1;
         Playing.classList.remove('fa-play-circle');
         Playing.classList.add('fa-pause-circle');
       }
@@ -152,10 +162,10 @@ document.getElementById('backward').addEventListener('click', () => {
   
   // Add a click event listener to the close button
   closeButton.addEventListener('click', () => {
-    aboutSec.style.display = 'none';
+    aboutSec.setAttribute("class","text-center hidden text-3xl lg:w-1/2 lg:h-[80vh] z-10 h-[65vh] lg:top-[10%] top-[15%] flex flex-col justify-evenly items-center  absolute bg-gradient-to-br from-gray-700 via-gray-200 to-gray-950 rounded-3xl ")
   });
   aboutButton.addEventListener('click', () => {
-    aboutSec.style.display = 'Block';
+    aboutSec.setAttribute("class","text-center  text-3xl lg:w-1/2 lg:h-[80vh] z-10 h-[65vh] lg:top-[10%] top-[15%] flex flex-col justify-evenly items-center  absolute bg-gradient-to-br from-gray-700 via-gray-200 to-gray-950 rounded-3xl ")
     
 
   });
