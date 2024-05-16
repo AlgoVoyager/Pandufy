@@ -42,16 +42,16 @@
         
     </div>
     <div class="container border border-l-4 border-l-cyan-400 border-b-2 border-b-cyan-400 
-    border-t-4 border-t-fuchsia-500 border-r-2 border-r-fuchsia-500 mx-auto p-5 min-h-[70vh] mb-14 lg:w-[80vw] w-[97vw] rounded-3xl">
-        <div class="songList bg-gray-50 bg-opacity-20 py-5 px-2 lg:w-[30%] w-full rounded-3xl">
+    border-t-4 border-t-fuchsia-500 border-r-2 border-r-fuchsia-500 mx-auto p-5 min-h-[60vh] mb-14 lg:w-[80vw] w-[97vw] rounded-3xl">
+        <div class="songList bg-gray-50 bg-opacity-20 py-5 px-2 lg:w-[40%] w-full rounded-3xl">
             <h1 class="lg:text-4xl text-2xl text-white font-bold mb-10">Best of Panda - Pandufy</h1>
-            <div class="songItemContainer flex flex-col lg:gap-5 gap-2">
+            <div class="songItemContainer flex flex-col lg:gap-5 gap-2 overflow-y-auto lg:max-h-[45vh] h-auto" style="scrollbar-width: none; -ms-overflow-style: none; scrollbar-color: transparent;">
                 <div class="songItem">
                     <img src="resources\thumbnails\mehram.jpg" alt="cover1">
                     <span class="songName">Mehram (Kahani 2)</span>
                     <!-- <span class="songlistplay"> -->
-                        <span class="timestamp flex ">2:01 <i id="1"
-                                class="songItemPlay fa-solid fa-3x fa-play-circle"></i></span>
+                        <span class="timestamp flex">2:01 <i id="1"
+                                class="songItemPlay fa-solid fa-3x fa-play-circle "></i></span>
                     <!-- </span> -->
                 </div>
                 <div class="songItem">
@@ -96,11 +96,12 @@
                 </div>
 
             </div>
+            <div class="more text-center text-white">↓</div>
         </div>
         <div class="songBanner"></div>
     </div>
     <div class="sep">🐼</div>
-    <div class="mediaControls absolute bottom-0 w-full bg-black text-white flex h-32 items-center justify-center flex-col">
+    <div class="mediaControls absolute bottom-0 w-full bg-black text-white flex h-28 items-center justify-center flex-col">
         <div class="seekSection lg:w-[50%] w-[90%] ">
             <!-- <span id="currentSongTime">0:00</span> -->
             <input type="range" class="w-[100%]" name="seekBar" id="seekBar" value="0" min="0" max="100">
